@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "2495883230",
+    "firebase_url": "https://workoutroutine-c36cd.firebaseio.com",
+    "project_id": "workoutroutine-c36cd",
+    "storage_bucket": "workoutroutine-c36cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2495883230:android:31c05ad543183f40",
+        "android_client_info": {
+          "package_name": "com.ramsesordonez.workoutroutineapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2495883230-26pu6h4lu4tp19gilp7sngpdo1dn8f58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ramsesordonez.workoutroutineapplication",
+            "certificate_hash": "fd87f7205ddb17a06b8dfd497d613fb4cd0cad50"
+          }
+        },
+        {
+          "client_id": "2495883230-qpip399bmurm9si5ovbksb5sif1frn2a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ramsesordonez.workoutroutineapplication",
+            "certificate_hash": "121a7fab44bda1088113a0471369a5b4d1ff8ce2"
+          }
+        },
+        {
+          "client_id": "2495883230-1qc588vfqncqaga0qc0lgsud5akcokn3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "2495883230-1qc588vfqncqaga0qc0lgsud5akcokn3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6RkiueaxWXb_W2bJ3cIaHQ20QbX9GA0M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2495883230-1qc588vfqncqaga0qc0lgsud5akcokn3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
