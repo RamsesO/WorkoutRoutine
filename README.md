@@ -7,8 +7,8 @@
 Clone this repository and import into **Android Studio**
 
 ## Roadmap
-- [ ] Individual Workouts
-- [ ] Android to Firebase
+- [ ] Individual Workouts (Needs to be unique, therefore database checking)
+- [ ] Android with SQLite
 - [ ] Workout Days
 - [ ] Workout Routines
 
