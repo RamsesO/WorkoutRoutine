@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">WorkoutRoutineApplication</string>
+    <string name="app_name">WorkoutRoutine</string>
+    <string name="button_add_workout">Add New Workout</string>
 </resources>

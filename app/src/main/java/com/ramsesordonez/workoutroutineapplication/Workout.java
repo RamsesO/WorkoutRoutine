@@ -3,25 +3,31 @@ package com.ramsesordonez.workoutroutineapplication;
 import java.util.List;
 
 public class Workout {
-    private String mName;
-    private String mId;
-    private List<Exercise> mExerciseList;
+    private String workoutId;
+    private String name;
 
-    public Workout(String name, String id) {
-        this.mName = name;
-        this.mId = id;
+    public Workout() {
+
     }
 
+    public Workout(String workoutId, String name){
+        this.workoutId = workoutId;
+        this.name = name;
+    }
+
+    public String getWorkoutId() {
+        return workoutId;
+    }
 
     public String getName() {
-        return mName;
+        return name;
     }
 
-    public String getId() {
-        return mId;
+    public void setWorkoutId(String workoutId) {
+        this.workoutId = workoutId;
     }
 
-    public List<Exercise> getExerciseList() {
-        return mExerciseList;
+    public void setName(String name) {
+        this.name = name;
     }
 }
