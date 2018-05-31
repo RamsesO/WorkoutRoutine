@@ -13,21 +13,21 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
 
     private Context wContext;
 
-    private ArrayList<Exercise> wDataSet;
+    private ArrayList<Workout> wDataSet;
 
 
-    public WorkoutAdapter(ArrayList<Exercise> dataSet, Context context) {
+    public WorkoutAdapter(ArrayList<Workout> dataSet, Context context) {
         wDataSet = dataSet;
         wContext = context;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView exercise_name;
+        TextView workout_name;
 
         public ViewHolder(View v) {
             super(v);
-            exercise_name = v.findViewById(R.id.exercise_name);
+            workout_name = v.findViewById(R.id.workout_name);
         }
 
     }
@@ -35,7 +35,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
     @Override
     public WorkoutAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(wContext);
-        View view = layoutInflater.inflate(R.layout.exercise_item, parent, false);
+        View view = layoutInflater.inflate(R.layout.workout_item, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
 
@@ -44,9 +44,9 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Exercise exercise = wDataSet.get(position);
-        TextView name = holder.exercise_name;
-        name.setText(exercise.getName());
+        Workout workout = wDataSet.get(position);
+        TextView name = holder.workout_name;
+        name.setText(workout.getName());
     }
 
     @Override

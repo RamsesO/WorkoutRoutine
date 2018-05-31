@@ -25,10 +25,10 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/exercise_name"
+                android:id="@+id/workout_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Exercise Name"
+                android:text="Workout Name"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

@@ -15,7 +15,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -29,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager wLayoutManager;
 
     private DatabaseReference databaseWorkouts;
-    private ArrayList<Exercise> exerciseList;
+    private ArrayList<Workout> workoutList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +41,12 @@ public class HomeActivity extends AppCompatActivity {
         buttonAddWorkout = findViewById(R.id.button_add_workout);
         workoutRecyclerView = findViewById(R.id.workout_recycler_view);
 
-        exerciseList = new ArrayList<>();
+        workoutList = new ArrayList<>();
 
         wLayoutManager = new LinearLayoutManager(this);
         workoutRecyclerView.setLayoutManager(wLayoutManager);
 
-        wAdapter = new WorkoutAdapter(exerciseList, this);
+        wAdapter = new WorkoutAdapter(workoutList, this);
         workoutRecyclerView.setAdapter(wAdapter);
 
 
@@ -60,9 +59,8 @@ public class HomeActivity extends AppCompatActivity {
         databaseWorkouts.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Exercise a = dataSnapshot.getValue(Exercise.class);
-                System.out.println(a.getName() + " " + a.getExerciseId());
-                exerciseList.add(a);
+                Workout a = dataSnapshot.getValue(Workout.class);
+                workoutList.add(a);
             }
 
             @Override
@@ -92,7 +90,7 @@ public class HomeActivity extends AppCompatActivity {
 
         if(!TextUtils.isEmpty(name)){
             String id = databaseWorkouts.push().getKey();
-            Exercise e = new Exercise(id, name);
+            Workout e = new Workout(id, name);
 
             databaseWorkouts.child(id).setValue(e);
 
