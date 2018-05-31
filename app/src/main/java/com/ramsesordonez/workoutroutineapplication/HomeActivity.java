@@ -10,8 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -38,12 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         buttonAddWorkout = findViewById(R.id.button_add_workout);
         workoutRecyclerView = findViewById(R.id.workout_recycler_view);
 
-//        populate exercise list
         exerciseList = new ArrayList<>();
-
-        exerciseList.add(new Exercise("123", "legs"));
-        exerciseList.add(new Exercise("123", "back"));
-
 
         wLayoutManager = new LinearLayoutManager(this);
         workoutRecyclerView.setLayoutManager(wLayoutManager);
@@ -57,8 +56,36 @@ public class HomeActivity extends AppCompatActivity {
                 addWorkout();
             }
         });
-    }
 
+        databaseWorkouts.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Exercise a = dataSnapshot.getValue(Exercise.class);
+                System.out.println(a.getName() + " " + a.getExerciseId());
+                exerciseList.add(a);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     private void addWorkout(){
         String name = workoutTitle.getText().toString().trim();
