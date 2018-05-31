@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:weightSum="8"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp">
 
         <ImageView
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="128dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/Miku"/>
+            android:src="@drawable/miku"/>
         <LinearLayout
             android:paddingLeft="40dp"
             android:paddingTop="50dp"
@@ -34,4 +36,4 @@
 
 
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
