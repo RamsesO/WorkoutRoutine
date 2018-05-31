@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -23,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager wLayoutManager;
 
     private DatabaseReference databaseWorkouts;
+    private ArrayList<Exercise> exerciseList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +38,19 @@ public class HomeActivity extends AppCompatActivity {
         buttonAddWorkout = findViewById(R.id.button_add_workout);
         workoutRecyclerView = findViewById(R.id.workout_recycler_view);
 
+//        populate exercise list
+        exerciseList = new ArrayList<>();
+
+        exerciseList.add(new Exercise("123", "legs"));
+        exerciseList.add(new Exercise("123", "back"));
+
+
         wLayoutManager = new LinearLayoutManager(this);
         workoutRecyclerView.setLayoutManager(wLayoutManager);
 
-//        wAdapter = new WorkoutAdapter(databaseWorkouts);
-//        workoutRecyclerView.setAdapter(wAdapter);
+        wAdapter = new WorkoutAdapter(exerciseList, this);
+        workoutRecyclerView.setAdapter(wAdapter);
+
 
         buttonAddWorkout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
