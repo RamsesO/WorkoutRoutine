@@ -8,14 +8,14 @@ public class Exercise {
 
     private String mName;
     private String mId;
-    private List<workoutSet> mWorkoutList;
+    private List<WorkoutSet> setList;
 
-    private class workoutSet{
+    private class WorkoutSet{
         int repsDone;
         int weight;
         Date date;
 
-        public workoutSet(int w) {
+        public WorkoutSet(int w) {
             this.weight = w;
             date = new Date();
         }
@@ -39,7 +39,7 @@ public class Exercise {
         return mId;
     }
 
-    public List<workoutSet> getWorkoutList() {
-        return mWorkoutList;
+    public List<WorkoutSet> getWorkoutList() {
+        return setList;
     }
 }

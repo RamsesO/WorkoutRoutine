@@ -5,6 +5,7 @@ import java.util.List;
 public class Workout {
     private String workoutId;
     private String name;
+    private List<Exercise> exerciseList;
 
     public Workout() {
 
@@ -29,5 +30,13 @@ public class Workout {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Exercise> getExerciseList() {
+        return exerciseList;
+    }
+
+    public void setExerciseList(List<Exercise> exerciseList) {
+        this.exerciseList = exerciseList;
     }
 }
