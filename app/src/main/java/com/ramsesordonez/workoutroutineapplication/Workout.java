@@ -1,5 +1,6 @@
 package com.ramsesordonez.workoutroutineapplication;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Workout {
@@ -14,6 +15,7 @@ public class Workout {
     public Workout(String workoutId, String name){
         this.workoutId = workoutId;
         this.name = name;
+        this.exerciseList = new ArrayList<>();
     }
 
     public String getWorkoutId() {
