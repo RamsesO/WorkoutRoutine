@@ -1,12 +1,12 @@
 package com.ramsesordonez.workoutroutineapplication;
 
-import java.util.Date;
-
 public class Exercise {
     private String exerciseId;
     private String name;
 
+    public Exercise() {
 
+    }
 
     public Exercise(String exerciseId, String name){
         this.exerciseId = exerciseId;
@@ -19,5 +19,13 @@ public class Exercise {
 
     public String getName() {
         return name;
+    }
+
+    public void setExerciseId(String exerciseId) {
+        this.exerciseId = exerciseId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
