@@ -15,6 +15,12 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
 
     private ArrayList<Workout> wDataSet;
 
+    // interface for clicks
+    private OnItemClicked onClick;
+
+    public interface OnItemClicked {
+        void onItemClick(int position);
+    }
 
     public WorkoutAdapter(ArrayList<Workout> dataSet, Context context) {
         wDataSet = dataSet;
@@ -43,14 +49,25 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         Workout workout = wDataSet.get(position);
         TextView name = holder.workout_name;
         name.setText(workout.getName());
+
+        holder.workout_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClick.onItemClick(position);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return wDataSet.size();
+    }
+
+    public void setOnClick(OnItemClicked onClick) {
+        this.onClick = onClick;
     }
 }
