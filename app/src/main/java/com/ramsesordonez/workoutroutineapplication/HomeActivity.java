@@ -1,5 +1,6 @@
 package com.ramsesordonez.workoutroutineapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,11 +16,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
 
 public class HomeActivity extends AppCompatActivity implements WorkoutAdapter.OnItemClicked{
+
+    public static final String WORKOUT_CHOSEN = "com.ramsesordonez.workoutroutineapplication.WORKOUT";
 
     private EditText workoutTitle;
     private Button buttonAddWorkout;
@@ -94,6 +98,7 @@ public class HomeActivity extends AppCompatActivity implements WorkoutAdapter.On
             Workout e = new Workout(id, name);
 
             databaseWorkouts.child(id).setValue(e);
+            workoutList.add(e);
 
             Toast.makeText(this, "exercise added", Toast.LENGTH_LONG).show();
 
@@ -105,8 +110,11 @@ public class HomeActivity extends AppCompatActivity implements WorkoutAdapter.On
 
     @Override
     public void onItemClick(int position){
-        String str = "position " + position;
-        Toast.makeText(this, str, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, WorkoutActivity.class);
+        Workout w = workoutList.get(position);
+        Gson gson = new Gson();
+        intent.putExtra(WORKOUT_CHOSEN, gson.toJson(w));
+        startActivity(intent);
     }
 }
 
