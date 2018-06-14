@@ -19,12 +19,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements WorkoutAdapter.OnItemClicked{
 
     private EditText workoutTitle;
     private Button buttonAddWorkout;
     private RecyclerView workoutRecyclerView;
-    private RecyclerView.Adapter wAdapter;
+    private WorkoutAdapter wAdapter;
     private RecyclerView.LayoutManager wLayoutManager;
 
     private DatabaseReference databaseWorkouts;
@@ -49,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
         wAdapter = new WorkoutAdapter(workoutList, this);
         workoutRecyclerView.setAdapter(wAdapter);
 
+        wAdapter.setOnClick(this);
 
         buttonAddWorkout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -100,6 +101,12 @@ public class HomeActivity extends AppCompatActivity {
         else{
             Toast.makeText(this, "enter a name", Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onItemClick(int position){
+        String str = "position " + position;
+        Toast.makeText(this, str, Toast.LENGTH_LONG).show();
     }
 }
 
