@@ -1,5 +1,6 @@
 package com.ramsesordonez.workoutroutineapplication;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -29,6 +30,7 @@ public class Exercise {
     public Exercise(String name, String id) {
         this.mName = name;
         this.mId = id;
+        setList = new ArrayList<>();
     }
 
     public String getName() {
