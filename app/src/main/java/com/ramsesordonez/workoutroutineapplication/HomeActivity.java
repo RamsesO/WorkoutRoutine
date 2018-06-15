@@ -95,12 +95,12 @@ public class HomeActivity extends AppCompatActivity implements WorkoutAdapter.On
 
         if(!TextUtils.isEmpty(name)){
             String id = databaseWorkouts.push().getKey();
-            Workout e = new Workout(id, name);
+            Workout w = new Workout(id, name.toLowerCase());
 
-            databaseWorkouts.child(id).setValue(e);
-            workoutList.add(e);
+            databaseWorkouts.child(id).setValue(w);
+            workoutList.add(w);
 
-            Toast.makeText(this, "exercise added", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "workout added", Toast.LENGTH_LONG).show();
 
         }
         else{
