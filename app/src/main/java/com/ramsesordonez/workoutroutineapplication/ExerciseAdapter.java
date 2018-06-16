@@ -66,4 +66,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ViewHo
         return eDataSet.size();
     }
 
+    public void setOnClick(OnItemClicked onClick) {
+        this.onClick = onClick;
+    }
 }
