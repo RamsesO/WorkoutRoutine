@@ -10,7 +10,15 @@ Clone this repository and import into **Android Studio**
 - [ ] Individual Workouts (Needs to be unique, therefore database checking)
 - [x] Android with Firebase ~~SQLite~~
 - [ ] Workout Days
-- [ ] Workout Routines
+- [ ] Workout Routines (Exercises?)
+
+## Features to Add
+- [ ] authentication
+- [ ] better scrolling
+- [ ] edittext for title is ugly
+- [ ] not sure if there should be pictures for workouts/exercises
+- [ ] button to delete workout/exercise
+- [ ] graphs for exercises
 
 ## Contributing
 1. Fork
